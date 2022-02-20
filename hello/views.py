@@ -5,6 +5,9 @@ from django.http import HttpResponse
 from .models import Greeting
 
 # Create your views here.
+def say_hello(request):
+    return render(request, 'hello.html')
+    
 def index(request):
     r = requests.get('https://httpbin.org/status/418')
     print(r.text)
